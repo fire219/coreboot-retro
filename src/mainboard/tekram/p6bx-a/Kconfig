@@ -1,0 +1,46 @@
+## SPDX-License-Identifier: GPL-2.0-only
+
+if BOARD_TEKRAM_P6BXA
+
+config BOARD_SPECIFIC_OPTIONS
+	def_bool y
+	select ACPI_NO_CUSTOM_MADT
+	select CPU_INTEL_SLOT_1
+	select NORTHBRIDGE_INTEL_I440BX
+	select SOUTHBRIDGE_INTEL_I82371EB
+	select SUPERIO_WINBOND_W83977TF
+	select HAVE_PIRQ_TABLE
+	select HAVE_OPTION_TABLE
+	select BOARD_ROMSIZE_KB_256
+	select USE_OPTION_TABLE
+	select HAVE_ACPI_TABLES if BOARD_SHUTTLE_AB61 || BOARD_SHUTTLE_HOT_661
+
+config MAX_CPUS
+	int
+	default 1 if BOARD_TEKRAM_P6BXA
+
+config MAINBOARD_DIR
+	default "tekram/p6bx-a"
+
+config MAINBOARD_PART_NUMBER
+	default "P6BXA" if BOARD_TEKRAM_P6BXA
+
+config VARIANT_DIR
+	default "p6bxa" if BOARD_TEKRAM_P6BXA
+
+config OVERRIDE_DEVICETREE
+	default "variants/\$(CONFIG_VARIANT_DIR)/overridetree.cb"
+
+config IRQ_SLOT_COUNT
+	int
+	default 7
+
+config PAYLOAD_CONFIGFILE
+	string
+	default "\$(top)/src/mainboard/\$(MAINBOARDDIR)/config_seabios" if PAYLOAD_SEABIOS
+
+config SEABIOS_BOOTORDER_FILE
+	string
+	default "\$(top)/src/mainboard/\$(MAINBOARDDIR)/bootorder" if PAYLOAD_SEABIOS
+
+endif

@@ -1,0 +1,3 @@
+config BOARD_TEKRAM_P6BXA
+	bool "P6BXA"
+
