@@ -44,7 +44,7 @@ const char *smbios_mainboard_product_name(void)
 			return "P6BX-A";
 	}
 
-	return mainboard_part_number;
+	return "Default string";
 }
 
 /* Only baseboard serial number is populated */
