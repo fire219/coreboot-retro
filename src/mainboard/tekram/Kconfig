@@ -1,0 +1,17 @@
+## SPDX-License-Identifier: GPL-2.0-only
+
+if VENDOR_TEKRAM
+
+choice
+	prompt "Mainboard model"
+
+source "src/mainboard/tekram/*/Kconfig.name"
+
+endchoice
+
+source "src/mainboard/tekram/*/Kconfig"
+
+config MAINBOARD_VENDOR
+	default "Tekram"
+
+endif # VENDOR_TEKRAM

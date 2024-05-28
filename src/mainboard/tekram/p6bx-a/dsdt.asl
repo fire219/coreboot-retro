@@ -143,7 +143,7 @@ DefinitionBlock (
 			#include <northbridge/intel/i440bx/acpi/sb_pci0_crs.asl>
 			#include <southbridge/intel/i82371eb/acpi/isabridge.asl>
 
-			#include <mainboard/shuttle/ab61/variants/ab61/i82371eb.asl>
+			#include <mainboard/tekram/p6bx-a/variants/p6bx-a/i82371eb.asl>
 			#include <superio/winbond/w83977tf/acpi/superio.asl>
 		}
 	}
