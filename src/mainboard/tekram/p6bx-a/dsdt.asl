@@ -104,47 +104,268 @@ DefinitionBlock (
 
 			/* PCI Routing Table */
 			Name (_PRT, Package () {
-				Package (0x04) { 0x0009FFFF, 0, LNKA, 0 },
-				Package (0x04) { 0x0009FFFF, 1, LNKB, 0 },
-				Package (0x04) { 0x0009FFFF, 2, LNKC, 0 },
-				Package (0x04) { 0x0009FFFF, 3, LNKD, 0 },
+				Package (0x04)
+                {
+                    0x000CFFFF, 
+                    0x00, 
+                    LNKA, 
+                    0x00
+                }, 
 
-				Package (0x04) { 0x000AFFFF, 0, LNKB, 0 },
-				Package (0x04) { 0x000AFFFF, 1, LNKC, 0 },
-				Package (0x04) { 0x000AFFFF, 2, LNKD, 0 },
-				Package (0x04) { 0x000AFFFF, 3, LNKA, 0 },
+                Package (0x04)
+                {
+                    0x000CFFFF, 
+                    0x01, 
+                    LNKB, 
+                    0x00
+                }, 
 
-				Package (0x04) { 0x000BFFFF, 0, LNKC, 0 },
-				Package (0x04) { 0x000BFFFF, 1, LNKD, 0 },
-				Package (0x04) { 0x000BFFFF, 2, LNKA, 0 },
-				Package (0x04) { 0x000BFFFF, 3, LNKB, 0 },
+                Package (0x04)
+                {
+                    0x000CFFFF, 
+                    0x02, 
+                    LNKC, 
+                    0x00
+                }, 
 
-				Package (0x04) { 0x000CFFFF, 0, LNKD, 0 },
-				Package (0x04) { 0x000CFFFF, 1, LNKA, 0 },
-				Package (0x04) { 0x000CFFFF, 2, LNKB, 0 },
-				Package (0x04) { 0x000CFFFF, 3, LNKC, 0 },
+                Package (0x04)
+                {
+                    0x000CFFFF, 
+                    0x03, 
+                    LNKD, 
+                    0x00
+                }, 
 
-				Package (0x04) { 0x000DFFFF, 0, LNKC, 0 },
-				Package (0x04) { 0x000DFFFF, 1, LNKD, 0 },
-				Package (0x04) { 0x000DFFFF, 2, LNKA, 0 },
-				Package (0x04) { 0x000DFFFF, 3, LNKB, 0 },
+                Package (0x04)
+                {
+                    0x000BFFFF, 
+                    0x00, 
+                    LNKB, 
+                    0x00
+                }, 
 
-				Package (0x04) { 0x0007FFFF, 0, LNKA, 0 },
-				Package (0x04) { 0x0007FFFF, 1, LNKB, 0 },
-				Package (0x04) { 0x0007FFFF, 2, LNKC, 0 },
-				Package (0x04) { 0x0007FFFF, 3, LNKD, 0 },
+                Package (0x04)
+                {
+                    0x000BFFFF, 
+                    0x01, 
+                    LNKC, 
+                    0x00
+                }, 
 
-				Package (0x04) { 0x0001FFFF, 0, LNKA, 0 },
-				Package (0x04) { 0x0001FFFF, 1, LNKB, 0 },
-				Package (0x04) { 0x0001FFFF, 2, LNKC, 0 },
-				Package (0x04) { 0x0001FFFF, 3, LNKD, 0 }
+                Package (0x04)
+                {
+                    0x000BFFFF, 
+                    0x02, 
+                    LNKD, 
+                    0x00
+                }, 
+
+                Package (0x04)
+                {
+                    0x000BFFFF, 
+                    0x03, 
+                    LNKA, 
+                    0x00
+                }, 
+
+                Package (0x04)
+                {
+                    0x000AFFFF, 
+                    0x00, 
+                    LNKC, 
+                    0x00
+                }, 
+
+                Package (0x04)
+                {
+                    0x000AFFFF, 
+                    0x01, 
+                    LNKD, 
+                    0x00
+                }, 
+
+                Package (0x04)
+                {
+                    0x000AFFFF, 
+                    0x02, 
+                    LNKA, 
+                    0x00
+                }, 
+
+                Package (0x04)
+                {
+                    0x000AFFFF, 
+                    0x03, 
+                    LNKB, 
+                    0x00
+                }, 
+
+                Package (0x04)
+                {
+                    0x0009FFFF, 
+                    0x00, 
+                    LNKD, 
+                    0x00
+                }, 
+
+                Package (0x04)
+                {
+                    0x0009FFFF, 
+                    0x01, 
+                    LNKA, 
+                    0x00
+                }, 
+
+                Package (0x04)
+                {
+                    0x0009FFFF, 
+                    0x02, 
+                    LNKB, 
+                    0x00
+                }, 
+
+                Package (0x04)
+                {
+                    0x0009FFFF, 
+                    0x03, 
+                    LNKC, 
+                    0x00
+                }, 
+
+                Package (0x04)
+                {
+                    0x0008FFFF, 
+                    0x00, 
+                    LNKB, 
+                    0x00
+                }, 
+
+                Package (0x04)
+                {
+                    0x0008FFFF, 
+                    0x01, 
+                    LNKC, 
+                    0x00
+                }, 
+
+                Package (0x04)
+                {
+                    0x0008FFFF, 
+                    0x02, 
+                    LNKD, 
+                    0x00
+                }, 
+
+                Package (0x04)
+                {
+                    0x0008FFFF, 
+                    0x03, 
+                    LNKA, 
+                    0x00
+                }, 
+
+                Package (0x04)
+                {
+                    0x000DFFFF, 
+                    0x00, 
+                    LNKC, 
+                    0x00
+                }, 
+
+                Package (0x04)
+                {
+                    0x000DFFFF, 
+                    0x01, 
+                    LNKD, 
+                    0x00
+                }, 
+
+                Package (0x04)
+                {
+                    0x000DFFFF, 
+                    0x02, 
+                    LNKA, 
+                    0x00
+                }, 
+
+                Package (0x04)
+                {
+                    0x000DFFFF, 
+                    0x03, 
+                    LNKB, 
+                    0x00
+                }, 
+
+                Package (0x04)
+                {
+                    0x0007FFFF, 
+                    0x00, 
+                    LNKA, 
+                    0x00
+                }, 
+
+                Package (0x04)
+                {
+                    0x0007FFFF, 
+                    0x01, 
+                    LNKB, 
+                    0x00
+                }, 
+
+                Package (0x04)
+                {
+                    0x0007FFFF, 
+                    0x02, 
+                    LNKC, 
+                    0x00
+                }, 
+
+                Package (0x04)
+                {
+                    0x0007FFFF, 
+                    0x03, 
+                    LNKD, 
+                    0x00
+                }, 
+
+                Package (0x04)
+                {
+                    0x0001FFFF, 
+                    0x00, 
+                    LNKA, 
+                    0x00
+                }, 
+
+                Package (0x04)
+                {
+                    0x0001FFFF, 
+                    0x01, 
+                    LNKB, 
+                    0x00
+                }, 
+
+                Package (0x04)
+                {
+                    0x0001FFFF, 
+                    0x02, 
+                    LNKC, 
+                    0x00
+                }, 
+
+                Package (0x04)
+                {
+                    0x0001FFFF, 
+                    0x03, 
+                    LNKD, 
+                    0x00
+                }
 
 			})
 			#include <northbridge/intel/i440bx/acpi/sb_pci0_crs.asl>
 			#include <southbridge/intel/i82371eb/acpi/isabridge.asl>
 
 			#include <mainboard/tekram/p6bx-a/variants/p6bx-a/i82371eb.asl>
-			#include <superio/winbond/w83977tf/acpi/superio.asl>
+			#include <superio/winbond/w83977ef/acpi/superio.asl>
 		}
 	}
 

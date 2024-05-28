@@ -16,6 +16,16 @@ Device (PX40)
 	}	
 }
 
+Device (USB0)
+{
+    Name (_ADR, 0x00070002)  // _ADR: Address
+    Name (_PRW, Package (0x02)  // _PRW: Power Resources for Wake
+    {
+        0x08, 
+        0x04
+    })
+}
+
 Device (PX43)
 {
 	Name (_ADR, 0x00070003)
@@ -49,22 +59,72 @@ Device (SYSR)
 	{
 		Name (BUF1, ResourceTemplate ()
 		{
-			/* PIIX4E ports */
-			/* Aliased DMA ports */
-			IO (Decode16, 0x0010, 0x0010, 0x01, 0x10, )
-			/* Aliased PIC ports */
-			IO (Decode16, 0x0022, 0x0022, 0x01, 0x1E, )
-			/* Aliased timer ports */
-			IO (Decode16, 0x0050, 0x0050, 0x01, 0x04, )
-			IO (Decode16, 0x0062, 0x0062, 0x01, 0x02, )
-			IO (Decode16, 0x0065, 0x0065, 0x01, 0x0B, )
-			IO (Decode16, 0x0074, 0x0074, 0x01, 0x0C, )
-			IO (Decode16, 0x0091, 0x0091, 0x01, 0x03, )
-			IO (Decode16, 0x00A2, 0x00A2, 0x01, 0x1E, )
-			IO (Decode16, 0x00E0, 0x00E0, 0x01, 0x10, )
-			IO (Decode16, 0x0294, 0x0294, 0x01, 0x04, )
-			IO (Decode16, 0x03F0, 0x03F0, 0x01, 0x02, )
-			IO (Decode16, 0x04D0, 0x04D0, 0x01, 0x02, )
+			IO (Decode16,
+				0x0010,             // Range Minimum
+				0x0010,             // Range Maximum
+				0x01,               // Alignment
+				0x10,               // Length
+				)
+			IO (Decode16,
+				0x0022,             // Range Minimum
+				0x0022,             // Range Maximum
+				0x01,               // Alignment
+				0x1E,               // Length
+				)
+			IO (Decode16,
+				0x0044,             // Range Minimum
+				0x0044,             // Range Maximum
+				0x01,               // Alignment
+				0x1C,               // Length
+				)
+			IO (Decode16,
+				0x0062,             // Range Minimum
+				0x0062,             // Range Maximum
+				0x01,               // Alignment
+				0x02,               // Length
+				)
+			IO (Decode16,
+				0x0065,             // Range Minimum
+				0x0065,             // Range Maximum
+				0x01,               // Alignment
+				0x0B,               // Length
+				)
+			IO (Decode16,
+				0x0074,             // Range Minimum
+				0x0074,             // Range Maximum
+				0x01,               // Alignment
+				0x0C,               // Length
+				)
+			IO (Decode16,
+				0x0091,             // Range Minimum
+				0x0091,             // Range Maximum
+				0x01,               // Alignment
+				0x03,               // Length
+				)
+			IO (Decode16,
+				0x00A2,             // Range Minimum
+				0x00A2,             // Range Maximum
+				0x01,               // Alignment
+				0x1E,               // Length
+				)
+			IO (Decode16,
+				0x00E0,             // Range Minimum
+				0x00E0,             // Range Maximum
+				0x01,               // Alignment
+				0x10,               // Length
+				)
+			IO (Decode16,
+				0x03F0,             // Range Minimum
+				0x03F0,             // Range Maximum
+				0x01,               // Alignment
+				0x02,               // Length
+				)
+			IO (Decode16,
+				0x04D0,             // Range Minimum
+				0x04D0,             // Range Maximum
+				0x01,               // Alignment
+				0x02,               // Length
+				)
 		})
 		Return (BUF1)
 	}
@@ -112,7 +172,7 @@ Device (RTC)
 	Name (_HID, EisaId ("PNP0B00"))
 	Name (_CRS, ResourceTemplate ()
 	{
-		IO (Decode16,0x0070,0x0070,0x01,0x04,)
+		IO (Decode16,0x0070,0x0070,0x00,0x04,)
 		IRQNoFlags () {8}
 	})
 }
